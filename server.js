@@ -13,8 +13,7 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   } else if (req.url === "/home") {
-    res.writeHeader(200, { "Content-Type": "text/html" });
-    // res.redirect("/");
+    res.writeHeader(302, { Location: "/" });
     res.end();
   } else if (req.url === "/contact") {
     fs.readFile("contact.html", (err, data) => {
